@@ -13,11 +13,16 @@ public class Location {
         nextId++;
     }
 
+    public Location (String value) {//location will only take a value "LaunchCode"
+        this();//initializes id
+        this.value = value;//the book says aValue
+    }
+
     // TODO: Add a constructor that takes a string as a parameter and assigns it to the 'value' field. The
-    //  constructor should also call the empty constructor in order to initialize the 'id' field.
+    //  constructor should also call the empty constructor in order to initialize the 'id' field. Don't understand.
 
 
-    // Custom toString, equals, and hashCode methods:
+    // Custom toString, equals, and hashCode methods:DONE
 
     @Override
     public String toString() {
