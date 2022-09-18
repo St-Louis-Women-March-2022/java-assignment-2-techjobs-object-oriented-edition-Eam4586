@@ -5,8 +5,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.launchcode.techjobs.oo.*;
 
-import javax.swing.text.Position;
-
+//import static jdk.internal.logger.DefaultLoggerFinder.SharedLoggers.system;
 import static org.junit.Assert.*;
 
 /**
@@ -30,6 +29,7 @@ public class JobTest {
     public void testJobConstructorSetsAllFields(){
         Job test_jobConstructorSetsAll = new Job ("product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("persistence"));
         //id check, check classes, I get the problem. I am saying that the word will equal the place.  It doesn't.
+        assertNotEquals(Job.nextId, test_jobConstructorSetsAll.getId());
         assertEquals ("product tester", test_jobConstructorSetsAll.getName());
         assertEquals ("ACME", test_jobConstructorSetsAll.getEmployer());
         assertEquals ("Desert", test_jobConstructorSetsAll.getLocation());
@@ -52,6 +52,28 @@ public class JobTest {
     @Test
     public void testToStringStartsAndEndsWithNewLine(){
         Job test_toString = new Job ("tester", new Employer("ACME"), new Location("UP"), new PositionType("QC"), new CoreCompetency("Love"));
-        assertTrue (test_toString.contains "/n");
+        String printOut = String.valueOf(test_toString);
+        char zero = printOut.charAt(0);
+        assertEquals('\n', zero);
+        char last = printOut.charAt(printOut.length()-1);
+        assertEquals('\n', last);
     }
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndData(){
+        Job test_toString = new Job ("tester", new Employer("ACME"), new Location("UP"), new PositionType("QC"), new CoreCompetency("Love"));
+        String printOut = String.valueOf(test_toString);
+        String expected = '\n' + "ID: " + test_toString.getId() + '\n'+ "Name: " + test_toString.getName() + '\n' + "Employer: " + test_toString.getEmployer() + '\n' + "Location: " + test_toString.getLocation() + '\n' + "Position Type: " + test_toString.getPositionType() + '\n' + "Core Competency: " + test_toString.getCoreCompetency() + '\n';
+        assertEquals(printOut, expected);
+
+    }
+
+    @Test
+    public void testToStringHandlesEmptyField(){
+        Job test_toString = new Job ("tester", new Employer("ACME"), new Location("UP"), new PositionType("QC"), new CoreCompetency("Love"));
+        String printOut = String.valueOf(test_toString);
+        System.out.println(printOut);
+//
+// If a field is empty, the method should add, “Data not available” after the label.
+ }
 }

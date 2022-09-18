@@ -2,20 +2,16 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class Job {//contains my fields
+public class Job {
 
     private int id;//used to identify job objects
-    private static int nextId = 1;
+    public static int nextId = 1;
 
     public String name;
     public Employer employer;//This is a class with a value and id field.
     public Location location;//This is a class with a value and id field.
     public PositionType positionType;//This is a class with a value and id field.
     public CoreCompetency coreCompetency;//This is a class with a value and id field.
-
-    // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
-    //  other five fields. The second constructor should also call the first in order to initialize
-    //  the 'id' field.
 
     public Job() {//One constructor (method called Job that takes in an id) to initialize a unique ID
         id = nextId;//assigns the value of nextId to the id field
@@ -86,6 +82,18 @@ public class Job {//contains my fields
     @Override
     public int hashCode() {
         return Objects.hash(getId());
+    }
+
+    @Override
+    public String toString() {
+        return '\n' +
+                "ID: " + id + '\n' +
+                "Name: " + name + '\n' +
+                "Employer: " + employer + '\n' +
+                "Location: " + location + '\n' +
+                "Position Type: " + positionType + '\n' +
+                "Core Competency: " + coreCompetency + '\n';
+    //If a field is empty, method should add, “Data not available” after the label.
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
