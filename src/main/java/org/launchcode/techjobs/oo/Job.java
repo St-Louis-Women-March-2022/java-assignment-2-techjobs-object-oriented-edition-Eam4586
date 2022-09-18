@@ -7,11 +7,11 @@ public class Job {//contains my fields
     private int id;//used to identify job objects
     private static int nextId = 1;
 
-    private String name;
-    private Employer employer;//This is a class with a value and id field.
-    private Location location;//This is a class with a value and id field.
-    private PositionType positionType;//This is a class with a value and id field.
-    private CoreCompetency coreCompetency;//This is a class with a value and id field.
+    public String name;
+    public Employer employer;//This is a class with a value and id field.
+    public Location location;//This is a class with a value and id field.
+    public PositionType positionType;//This is a class with a value and id field.
+    public CoreCompetency coreCompetency;//This is a class with a value and id field.
 
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
@@ -29,7 +29,6 @@ public class Job {//contains my fields
         this.location = location;
         this.positionType = positionType;
         this.coreCompetency = coreCompetency;
-        //THIS SHOULD CALL THE FIRST to initialize the id field??
     }
 
     public String getName() {
@@ -40,32 +39,32 @@ public class Job {//contains my fields
         this.name = name;
     }
 
-    public Employer getEmployer() {
-        return employer;
+    public String getEmployer() {
+        return String.valueOf(employer);
     }
 
     public void setEmployer(Employer employer) {
         this.employer = employer;
     }
 
-    public Location getLocation() {
-        return location;
+    public String getLocation() {
+        return String.valueOf (location);
     }
 
     public void setLocation(Location location) {
         this.location = location;
     }
 
-    public PositionType getPositionType() {
-        return positionType;
+    public String getPositionType() {
+        return String.valueOf(positionType);
     }
 
     public void setPositionType(PositionType positionType) {
         this.positionType = positionType;
     }
 
-    public CoreCompetency getCoreCompetency() {
-        return coreCompetency;
+    public String getCoreCompetency() {
+        return String.valueOf(coreCompetency);
     }
 
     public void setCoreCompetency(CoreCompetency coreCompetency) {
