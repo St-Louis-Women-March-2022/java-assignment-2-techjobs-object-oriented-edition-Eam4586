@@ -49,9 +49,9 @@ public class JobTest {
         assertNotEquals (test_firstSimilarJob, test_secondSimilarJob);
     }
 
-//    @Test
-//    public void testToStringStartsAndEndsWithNewLine(){
-//        Job test_toString = new Job ("tester", new Employer("ACME"), new Location("UP"), new PositionType("QC"), new CoreCompetency("Love"));
-//        assertTrue (test_toString.contains "/n");
-//    }
+    @Test
+    public void testToStringStartsAndEndsWithNewLine(){
+        Job test_toString = new Job ("tester", new Employer("ACME"), new Location("UP"), new PositionType("QC"), new CoreCompetency("Love"));
+        assertTrue (test_toString.contains "/n");
+    }
 }
