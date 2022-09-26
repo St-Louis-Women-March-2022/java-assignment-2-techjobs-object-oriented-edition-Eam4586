@@ -2,8 +2,7 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class Job extends JobField {
-
+public class Job {
     private int id;//used to identify job objects
     public static int nextId = 1;
     public String name;
@@ -11,10 +10,9 @@ public class Job extends JobField {
     public Location location;//This is a class with a value and id field.
     public PositionType positionType;//This is a class with a value and id field.
     public CoreCompetency coreCompetency;//This is a class with a value and id field.
-    public static String value = "";
+
 
     public Job() {//One constructor (method called Job that takes in an id) to initialize a unique ID
-        super(value);
         id = nextId;//assigns the value of nextId to the id field
         nextId++;//adds one to Id
     }
@@ -36,32 +34,32 @@ public class Job extends JobField {
         this.name = name;
     }
 
-    public String getEmployer() {
-        return String.valueOf(employer);
+    public Employer getEmployer() {
+        return employer;
     }
 
     public void setEmployer(Employer employer) {
         this.employer = employer;
     }
 
-    public String getLocation() {
-        return String.valueOf(location);
+    public Location getLocation() {
+        return location;
     }
 
     public void setLocation(Location location) {
         this.location = location;
     }
 
-    public String getPositionType() {
-        return String.valueOf(positionType);
+    public PositionType getPositionType() {
+        return positionType;
     }
 
     public void setPositionType(PositionType positionType) {
         this.positionType = positionType;
     }
 
-    public String getCoreCompetency() {
-        return String.valueOf(coreCompetency);
+    public CoreCompetency getCoreCompetency() {
+        return coreCompetency;
     }
 
     public void setCoreCompetency(CoreCompetency coreCompetency) {

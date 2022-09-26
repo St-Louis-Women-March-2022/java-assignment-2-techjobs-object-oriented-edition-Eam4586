@@ -33,11 +33,12 @@ public class JobTest {
         assertEquals ("Desert", test_jobConstructorSetsAll.getLocation());
         assertEquals ("Quality Control", test_jobConstructorSetsAll.getPositionType());
         assertEquals ("persistence", test_jobConstructorSetsAll.getCoreCompetency());
-        assertTrue(test_jobConstructorSetsAll.employer instanceof Employer);
-        assertTrue(test_jobConstructorSetsAll.location instanceof Location);
-        assertTrue(test_jobConstructorSetsAll.positionType instanceof PositionType);
-        assertTrue(test_jobConstructorSetsAll.coreCompetency instanceof CoreCompetency);
-        assertTrue(test_jobConstructorSetsAll instanceof Job);
+        assertTrue(test_jobConstructorSetsAll.getEmployer() instanceof Employer);
+        assertTrue(test_jobConstructorSetsAll.getLocation() instanceof Location);
+        assertTrue(test_jobConstructorSetsAll.getPositionType() instanceof PositionType);
+        assertTrue(test_jobConstructorSetsAll.getCoreCompetency() instanceof CoreCompetency);
+        assertTrue(test_jobConstructorSetsAll.getName() instanceof String);
+
     }
 
     @Test
