@@ -2,13 +2,14 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class Location {
+public class Location extends JobField {
 
     private int id;
     private static int nextId = 1;
-    private String value;
+    private static String value = "";
 
     public Location() {
+        super(value);
         id = nextId;
         nextId++;
     }
@@ -53,7 +54,6 @@ public class Location {
     }
 
     public void setValue(String value) {
-        this.value = value;
+        Employer.value = value;
     }
-
 }

@@ -2,13 +2,14 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class PositionType {
-
+public class PositionType extends JobField
+ {
     private int id;
     private static int nextId = 1;
-    private String value;
+    public static String value;
 
     public PositionType() {
+        super(value);
         id = nextId;
         nextId++;
     }
@@ -32,12 +33,12 @@ public class PositionType {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PositionType that = (PositionType) o;
-        return id == that.id;
+        return getId() == that.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(getId());
     }
 
 
@@ -52,7 +53,7 @@ public class PositionType {
     }
 
     public void setValue(String value) {
-        this.value = value;
+        PositionType.value = value;
     }
 
 }

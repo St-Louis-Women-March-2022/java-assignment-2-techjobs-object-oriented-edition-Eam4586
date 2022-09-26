@@ -2,13 +2,13 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class Employer {//creates the Employer class
-
+public class Employer extends JobField {//creates the Employer class
     private int id;//creates the id object, fluid placeholder for each employer because it's a field.  It will show up on each instance you create.
     private static int nextId = 1;//static belongs to employer class but will not show up for each instance because it is static.
-    private String value;
+    public static String value = "";
 
-    public Employer() {//accepts no argument
+    public Employer() {
+        super(value);//accepts no argument
         id = nextId;//assigns the value of nextId to the id field
         nextId++;//adds one to Id
     }
@@ -49,7 +49,6 @@ public class Employer {//creates the Employer class
     }//getter for Value
 
     public void setValue(String value) {
-        this.value = value;
-    }//setter for Value
-
+        Employer.value = value;
+    }
 }
