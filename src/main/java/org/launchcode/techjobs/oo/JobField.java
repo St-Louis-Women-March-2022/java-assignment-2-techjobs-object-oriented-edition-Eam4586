@@ -39,10 +39,10 @@ public abstract class JobField {
     }
 
     @Override
-    public int hashCode() {
+        public int hashCode() {
         return Objects.hash(id, value);
     }
-        @Override
+    @Override
         public String toString() {
             return value;
         }

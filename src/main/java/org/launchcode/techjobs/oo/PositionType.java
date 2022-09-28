@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class PositionType extends JobField
  {
-    public PositionType(String value) {
+     public PositionType(String value) {
         super(value);
     }
     //    public Location(String value) {//when a location is created it has to take in a value

@@ -27,17 +27,20 @@ public class JobTest {
 // Your test should have 5 assert statements of each type.
     @Test
     public void testJobConstructorSetsAllFields(){
-        Job test_jobConstructorSetsAll = new Job ("product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("persistence"));
-        assertEquals ("product tester", test_jobConstructorSetsAll.getName());
-        assertEquals ("ACME", test_jobConstructorSetsAll.getEmployer());
-        assertEquals ("Desert", test_jobConstructorSetsAll.getLocation());
-        assertEquals ("Quality Control", test_jobConstructorSetsAll.getPositionType());
-        assertEquals ("persistence", test_jobConstructorSetsAll.getCoreCompetency());
-        assertTrue(test_jobConstructorSetsAll.getEmployer() instanceof Employer);
-        assertTrue(test_jobConstructorSetsAll.getLocation() instanceof Location);
-        assertTrue(test_jobConstructorSetsAll.getPositionType() instanceof PositionType);
-        assertTrue(test_jobConstructorSetsAll.getCoreCompetency() instanceof CoreCompetency);
-        assertTrue(test_jobConstructorSetsAll.getName() instanceof String);
+        //Use assertTrue and assertEquals statements to test that the constructor correctly assigns
+        // both the class and value of each field. Your test should have 5 assert statements of each type.
+        //The instanceof keyword can be used to check the class of an object. The result of the comparison is a boolean.
+        Job testJobConstructorSetsAllFields = new Job ("product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("persistence"));
+        assertEquals ("product tester", testJobConstructorSetsAllFields.getName());
+        assertEquals ("ACME", testJobConstructorSetsAllFields.getEmployer());
+        assertEquals ("Desert", testJobConstructorSetsAllFields.getLocation());
+        assertEquals ("Quality Control", testJobConstructorSetsAllFields.getPositionType());
+        assertEquals ("persistence", testJobConstructorSetsAllFields.getCoreCompetency());
+        assertTrue(testJobConstructorSetsAllFields.getEmployer() instanceof Employer);
+        assertTrue(testJobConstructorSetsAllFields.getLocation() instanceof Location);
+        assertTrue(testJobConstructorSetsAllFields.getPositionType() instanceof PositionType);
+        assertTrue(testJobConstructorSetsAllFields.getCoreCompetency() instanceof CoreCompetency);
+        assertTrue(testJobConstructorSetsAllFields.getName() instanceof String);
 
     }
 
