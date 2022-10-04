@@ -21,7 +21,7 @@ public class JobTest {
     public void testSettingJobId(){
         Employer test_employer = new Employer ("LaunchCode");
         Employer test_employer2 = new Employer ("LaunchCode");
-        assertNotEquals (test_employer, test_employer2);
+        assertNotEquals (test_employer.getId(), test_employer2.getId());
     }
 //Use assertTrue and assertEquals statements to test that the constructor correctly assigns both the class and value of each field.
 // Your test should have 5 assert statements of each type.
@@ -32,10 +32,10 @@ public class JobTest {
         //The instanceof keyword can be used to check the class of an object. The result of the comparison is a boolean.
         Job testJobConstructorSetsAllFields = new Job ("product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality Control"), new CoreCompetency("persistence"));
         assertEquals ("product tester", testJobConstructorSetsAllFields.getName());
-        assertEquals ("ACME", testJobConstructorSetsAllFields.getEmployer());
-        assertEquals ("Desert", testJobConstructorSetsAllFields.getLocation());
-        assertEquals ("Quality Control", testJobConstructorSetsAllFields.getPositionType());
-        assertEquals ("persistence", testJobConstructorSetsAllFields.getCoreCompetency());
+        assertEquals ("ACME", testJobConstructorSetsAllFields.getEmployer().getValue());
+        assertEquals ("Desert", testJobConstructorSetsAllFields.getLocation().getValue());
+        assertEquals ("Quality Control", testJobConstructorSetsAllFields.getPositionType().getValue());
+        assertEquals ("persistence", testJobConstructorSetsAllFields.getCoreCompetency().getValue());
         assertTrue(testJobConstructorSetsAllFields.getEmployer() instanceof Employer);
         assertTrue(testJobConstructorSetsAllFields.getLocation() instanceof Location);
         assertTrue(testJobConstructorSetsAllFields.getPositionType() instanceof PositionType);
@@ -74,8 +74,7 @@ public class JobTest {
     Job test_toString3 = new Job ("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
     String printOut3 = String.valueOf(test_toString3);
     String expected3 = '\n' + "ID: " + test_toString3.getId() + '\n'+ "Name: Data not available" + '\n' + "Employer: Data not available" + '\n' + "Location: Data not available" + '\n' + "Position Type: Data not available" + '\n' + "Core Competency: Data not available" + '\n';
-    System.out.println();
-//    assertEquals(printOut3, expected3);
+    assertEquals(printOut3, expected3);
 }
 //If a field is empty, the method should add, “Data not available” after the label.  Tried if\then and have no idea on how to execute.
  }
